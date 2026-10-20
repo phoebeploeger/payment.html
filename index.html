@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Loan Payment Calculator</title>
+</head>
+<body>
 
+<h1>Loan Payment Calculator.</h1>
+
+
+
+
+<scipt> 
+function calculatePayment() {
+    // Get input values
+    let PV = parseFloat(document.getElementById("loanAmount").value);
+    let r = parseFloat(document.getElementById("interestRate").value);
+    let n = parseFloat(document.getElementById("years").value);
+
+    // Validate inputs
+    if (isNaN(PV) || isNaN(r) || isNaN(n) || PV <= 0 || r <= 0 || n <= 0) {
+        alert("Please enter valid values.");
+        return;
+    }
+
+    // Monthly payment formula
+    let P = ((r / 100 / 12) * PV) /
+            (1 - (1 + (r / 100 / 12)) ** -(n * 12));
+
+    // Display result
+    document.getElementById("result").textContent =
+        `$${P.toFixed(2)} per month`;
+}
+
+
+</scipt> 
+
+</body>
+</html>
