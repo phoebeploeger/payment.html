@@ -12,6 +12,8 @@ The Year <input id="years"> <br>
 <button onclick="calculatePayment()"> calculatePayment </button>
 
 </p>
+<p>
+  Your Answer <span id="ans"> _______ </span></p>
 
 <scipt> 
 function calculatePayment() {
@@ -31,8 +33,7 @@ function calculatePayment() {
             (1 - (1 + (r / 100 / 12)) ** -(n * 12));
 
     // Display result
-    document.getElementById("result").textContent =
-        `$${P.toFixed(2)} per month`;
+    document.getElementById("ans").textContent = "If you take a loan $"+ PV + "for $ years"+ r + "at $ interest"+ n + "your payment will be $" P.toFixed(2): 
 }
 
 
